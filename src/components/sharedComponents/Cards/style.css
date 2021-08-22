@@ -1,0 +1,32 @@
+.card {
+    background-color: #464646;
+    width: 390px;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.3); 
+}
+.cardImg {
+    width: 180px;
+    height: 220px;
+}
+.cardImg img {
+    border-radius: 8px 0px 0px 8px;
+    object-fit: cover;
+    width: 180px;
+    height: 100%;
+}
+.cardText {
+    display: flex;
+    align-items:flex-start ;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: #f1f1f1;
+}
+.cardText div {
+    padding-left: 10px;
+    margin: 5px 5px;
+}
