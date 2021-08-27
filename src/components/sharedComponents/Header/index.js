@@ -1,22 +1,26 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import './style.css'
+import React, {useEffect, useState} from 'react';
+import MobileHeader from './MobileHeader';
+import DesktopHeader from './DesktopHeader';
 
 function Header({setListSlug}) {
+    const [pageWidth, setPageWidth] = useState(window.innerWidth)
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+        const width  = window.innerWidth;
+        setPageWidth(width)
+        })
+    },[])
+
     return(
-        <header>
-            <div className='menuImg'>
-                <Link className='link' to='/' >
-                    <img src="/image/rick-and-morty.png" alt="Rick and Morty Logo" />
-                </Link>
-            </div>
-            <div className='menuLink'>
-                <Link className='link' onClick={() =>{setListSlug('character')}} to='/character' >Characters</Link>
-                <Link className='link' onClick={() =>{setListSlug('location')}} to='/location' >Locations</Link>
-                <Link className='link' onClick={() =>{setListSlug('episode')}} to='/episode' >Episodes</Link>
-            </div>
-        </header>
+        <>
+        {
+            pageWidth <= 768 ? 
+            <MobileHeader setListSlug={setListSlug}/>
+            :
+            <DesktopHeader setListSlug={setListSlug} />
+        }
+        </>
     )
 }
-
 export default Header;

@@ -1,0 +1,44 @@
+.examplesCardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #111111;
+    width: 90%;
+    margin: 10px 0px;
+    padding-bottom: 50px;
+    border-radius: 32px;
+}
+.cardTextExamples {
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 32px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+.exampleCards {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+.cardList {
+    margin: 20px;
+}
+.cardList h2 {
+    color: #f1f1f1;
+}
+
+
+@media (max-width: 576px) { 
+    .examplesCardContainer {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 20px;
+    }
+    .cardList {
+        margin: 0;
+    }
+}

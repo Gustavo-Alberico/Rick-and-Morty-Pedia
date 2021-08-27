@@ -16,7 +16,9 @@ export default function App() {
 
         const loadInfo = async () => {
             let cards = await Request.getHomeCards();
-            SetHomeInfo(cards); 
+            setTimeout(function(){ 
+                SetHomeInfo(cards); 
+            }, 3000);
         }
         loadInfo();
 
@@ -33,6 +35,7 @@ export default function App() {
     return (
         <div className="App">
             <Header setListSlug={setListSlug}/>
+
             <main>
                 <Switch>
                     <Route exact path='/'> 
@@ -44,6 +47,18 @@ export default function App() {
                 </Switch>
 
             </main>
+            
+            <footer>
+
+            </footer>
+
+            {
+                homeInfo <= 0 &&
+                <div className='loading'>
+                    <img src="http://pa1.narvii.com/6739/bdb4b304666e2b1cd7b2b43ead7861039417685b_00.gif" alt="" />
+                </div>
+            }
+
         </div>
     );
 };

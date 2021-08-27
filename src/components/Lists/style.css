@@ -4,7 +4,14 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin-top: 130px;
 }
 .cards {
     margin: 6px;
+}
+
+@media (max-width: 576px){
+    .cardsLists {
+        margin-top: 80px;
+    }
 }
