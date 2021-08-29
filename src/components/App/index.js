@@ -1,25 +1,28 @@
-import React, {useEffect,useState} from 'react';
-import './style.css';
-import Header from '../sharedComponents/Header';
-import {Switch, Route} from 'react-router-dom';
-import Request from '../../Requests';
+import React, { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from '../Header/';
 import Home from '../Home/';
-import Lists from '../Lists';
+import List from '../List';
+import Request from '../../Requests';
+import './style.css';
 
 export default function App() {
 
     const [homeInfo, SetHomeInfo] = useState([]);
-    const [listSlug, setListSlug] = useState('');
     const [lists, setLists] = useState([]);
+    const [listSlug, setListSlug] = useState('');
+    const [isLoading, setIsLoading] = useState(true)
     
     useEffect( () => {
 
+        setIsLoading(true);
         const loadInfo = async () => {
+            console.log(isLoading);
             let cards = await Request.getHomeCards();
-            setTimeout(function(){ 
-                SetHomeInfo(cards); 
-            }, 3000);
+            setIsLoading(false);
+            SetHomeInfo(cards); 
         }
+
         loadInfo();
 
     }, [])
@@ -30,11 +33,13 @@ export default function App() {
             setLists(lists)
         }
         loadLists();
+
+
     },[listSlug])
     
     return (
-        <div className="App">
-            <Header setListSlug={setListSlug}/>
+        <div>
+            <Header/>
 
             <main>
                 <Switch>
@@ -42,7 +47,8 @@ export default function App() {
                         <Home cardInfo={homeInfo}/> 
                     </Route>
                     <Route exact path={'/:id'}>
-                        <Lists lists={lists} setLists={setListSlug} /> 
+                        <List lists={lists} setListSlug={setListSlug} /> 
+                        
                     </Route>
                 </Switch>
 
@@ -53,7 +59,7 @@ export default function App() {
             </footer>
 
             {
-                homeInfo <= 0 &&
+                isLoading &&
                 <div className='loading'>
                     <img src="http://pa1.narvii.com/6739/bdb4b304666e2b1cd7b2b43ead7861039417685b_00.gif" alt="" />
                 </div>

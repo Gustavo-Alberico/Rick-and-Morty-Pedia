@@ -2,13 +2,12 @@ import React from 'react';
 import './style.css';
 
 
-export default function Cards({cardItem}){
+function Card({cardItem}){
     
     return (
         <div className='card'>
             {
-                cardItem.image ? <div className='cardImg'><img src={cardItem.image} alt={cardItem.name}/></div> :
-                <div className='cardImg'><img src='/image/rick-and-morty-logo-grey.png' alt={cardItem.name}/></div>
+                cardItem.image && <div className='cardImg'><img src={cardItem.image} alt={cardItem.name}/></div> 
             }
             <div className='cardText'>
 
@@ -18,8 +17,11 @@ export default function Cards({cardItem}){
                 {cardItem.type && <div>Type: {cardItem.type}</div>}
                 {cardItem.origin && <div>Origin: {cardItem.origin?.name}</div>}
                 {cardItem.dimension && <div>Location: {cardItem.dimension}</div>}
+                {typeof cardItem.episode === 'string' && <div>Episode: {cardItem.episode}</div> }
                 {cardItem.air_date && <div>Air Date : {cardItem.air_date}</div>}
             </div>
         </div>
     );
 };
+
+export default Card;

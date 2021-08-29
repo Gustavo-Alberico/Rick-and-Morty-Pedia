@@ -4,7 +4,7 @@ import './style.css';
 export default function About(){
     return (
         <div className='aboutContainer'>
-            <img src="/image/rick-and-morty.png" alt="" />
+            <img src="/images/rick-and-morty.png" alt="" />
             <div className='aboutTextContainer'>
                 <h1>lorem</h1>
                 <p className='aboutText'>

@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import './style.css'
 import {useParams} from 'react-router-dom';
-import Cards from '../sharedComponents/Cards'
+import Card from '../sharedComponents/Card'
 
-export default function Lists({lists, setLists}) {
+export default function Lists({lists, setListSlug}) {
     const {id} = useParams();
     
     useEffect(() => {
         const setList = () => {
-            setLists(id);
+            setListSlug(id);
         }
         setList();
-    }, [id, setLists]);
+    }, [id, setListSlug]);
 
     return(
         <section>
@@ -19,7 +19,7 @@ export default function Lists({lists, setLists}) {
                 <div className='cardsLists' key={key}>
                     {items.item && items.item.results?.map((list, key) =>
                         <div className='cards' key={key}>
-                            <Cards   cardItem={list}/>
+                            <Card   cardItem={list}/>
                         </div>
                     )}
                 </div>
