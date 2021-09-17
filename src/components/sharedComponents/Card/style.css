@@ -25,14 +25,14 @@
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    color: #f1f1f1;
+    color: #d4d4d4;
 }
 .cardText div {
     padding-left: 10px;
     margin: 5px;
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 800px) { 
     .card {
         width: 305px;
     }

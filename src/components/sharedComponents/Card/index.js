@@ -2,23 +2,22 @@ import React from 'react';
 import './style.css';
 
 
-function Card({cardItem}){
+function Card({cardData}){
     
     return (
         <div className='card'>
             {
-                cardItem.image && <div className='cardImg'><img src={cardItem.image} alt={cardItem.name}/></div> 
+                cardData.image && <div className='cardImg'><img src={cardData.image} alt={cardData.name}/></div> 
             }
             <div className='cardText'>
-
-                {cardItem.name && <div>Name: {cardItem.name}</div>}
-                {cardItem.status && <div>Status: {cardItem.status}</div>}
-                {cardItem.species && <div>Species: {cardItem.species}</div>}
-                {cardItem.type && <div>Type: {cardItem.type}</div>}
-                {cardItem.origin && <div>Origin: {cardItem.origin?.name}</div>}
-                {cardItem.dimension && <div>Location: {cardItem.dimension}</div>}
-                {typeof cardItem.episode === 'string' && <div>Episode: {cardItem.episode}</div> }
-                {cardItem.air_date && <div>Air Date : {cardItem.air_date}</div>}
+                {cardData.name && <div>Name: {cardData.name}</div>}
+                {cardData.status && <div>Status: {cardData.status}</div>}
+                {cardData.species && <div>Species: {cardData.species}</div>}
+                {cardData.type && <div>Type: {cardData.type}</div>}
+                {cardData.origin && <div>Origin: {cardData.origin?.name}</div>}
+                {cardData.dimension && <div>Location: {cardData.dimension}</div>}
+                {typeof cardData.episode === 'string' && <div>Episode: {cardData.episode}</div> }
+                {cardData.air_date && <div>Air Date : {cardData.air_date}</div>}
             </div>
         </div>
     );

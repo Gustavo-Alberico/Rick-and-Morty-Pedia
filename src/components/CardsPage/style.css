@@ -1,0 +1,22 @@
+.mainContainer {
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cardGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 768px){
+    .mainContainer {
+        margin-top: 80px;
+    }
+}

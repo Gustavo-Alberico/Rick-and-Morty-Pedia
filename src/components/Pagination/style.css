@@ -1,0 +1,49 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.pagination div {
+    cursor: pointer;
+}
+.pagination .page {
+    cursor: default;
+}
+.currentPage {
+    display: flex;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f1f1f1;
+    border-radius: 8px;
+    padding: 3px;
+    margin-left: 5px;
+    color: #ffffff;
+}
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    border: 1px solid #f1f1f1;
+    border-radius: 8px;
+    padding: 3px;
+    margin-left: 5px;
+    color: #ffffff;
+    
+}
+.page input {
+    width: 16px;
+    padding: 4px;
+    margin-right: 4px;
+    background-color: #c4c4c4;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}

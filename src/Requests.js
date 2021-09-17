@@ -10,34 +10,34 @@ const basicFetch = async (endpoint) => {
 
 const Requests = {
 
-  getHomeCards: async () => {
-    return [
-      {
-        slug: 'character',
-        title: 'Characters',
-        item: await basicFetch(`/character/${randomNumber()}`)
-      },
-      {
-        slug: 'location',
-        title: 'Locations',
-        item: await basicFetch(`/location/${randomNumber()}`)
-      },
-      {
-        slug: 'episode',
-        title: 'Episodes',
-        item: await basicFetch(`/episode/${randomNumber()}`)
-      }
-    ]
-  },
-  getList: async (slug) => {
-    return [
-      {
-        slug: `${slug}`,
-        item: await basicFetch(`/${slug}`)
-      }
-    ]
+    getPageInfo: async () => {
+        return [
+            {
+                slug: 'character',
+                title: 'Characters',
+                item: await basicFetch(`/character/${randomNumber()}`)
+            },
+            {
+                slug: 'location',
+                title: 'Locations',
+                item: await basicFetch(`/location/${randomNumber()}`)
+            },
+            {
+                slug: 'episode',
+                title: 'Episodes',
+                item: await basicFetch(`/episode/${randomNumber()}`)
+            }
+        ]
+    },
 
-  }
+    getCardsInfo: async (reqParam, pageNumber) => {
+        return [
+            {
+                slug: `${reqParam}`,
+                item: await basicFetch(`/${reqParam}/?page=${pageNumber}`)
+            }
+        ]
+
+    }
 }
-
 export default Requests;

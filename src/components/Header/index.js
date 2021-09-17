@@ -17,7 +17,6 @@ function Header() {
 
     }
 
-
     return(
         <header className='header'>
             <div className='logo'>
@@ -25,7 +24,6 @@ function Header() {
                     <img src="/images/RMpedia.png" alt="Rick and Morty Logo" />
                 </Link>
             </div>
-
             <nav className={mobileMenu}>
 
                 <div className='buttonMobile' onClick={() => {setIsActive(!isActive)}}>
@@ -33,14 +31,12 @@ function Header() {
                         isActive ? <CloseIcon /> : <MenuIcon />
                     }
                 </div>
-
                 <ul className='menu'>
                     <li><Link onClick={selectPage} to='/' >Home</Link></li>
                     <li><Link onClick={selectPage} to='/character' >Characters</Link></li>
                     <li><Link onClick={selectPage} to='/location' >Locations</Link></li>
                     <li><Link onClick={selectPage} to='/episode' >Episodes</Link></li>
                 </ul>
-
             </nav>
 
         </header>
