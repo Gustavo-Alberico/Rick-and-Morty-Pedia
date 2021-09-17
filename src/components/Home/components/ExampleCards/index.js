@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import Cards from '../../../sharedComponents/Cards';
+import Card from '../../../sharedComponents/Card';
 
 
 export default function ExampleCards({cardInfo}){
@@ -8,10 +8,10 @@ export default function ExampleCards({cardInfo}){
         <div className='examplesCardContainer'>
             <div className='cardTextExamples'>Examples</div>
             <div className='exampleCards'>
-                {cardInfo && cardInfo.map((cardItem, key) =>
-                    <div className='cardList' key={key}>
-                        <h2>{cardItem.title && cardItem.title}</h2>
-                        <Cards cardItem={cardItem.item}/>
+                {cardInfo && cardInfo.map((cardData, key) =>
+                    <div className='randomCards' key={key}>
+                        <h2>{cardData.title && cardData.title}</h2>
+                        <Card cardData={cardData.item}/>
                     </div>
                 )} 
             </div>         

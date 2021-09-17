@@ -1,64 +1,60 @@
-import React, {useEffect,useState} from 'react';
-import './style.css';
-import Header from '../sharedComponents/Header';
-import {Switch, Route} from 'react-router-dom';
-import Request from '../../Requests';
+import React, { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from '../Header/';
 import Home from '../Home/';
-import Lists from '../Lists';
+import CardsPage from '../CardsPage/';
+import Requests from '../../Requests';
+import './style.css';
 
-export default function App() {
-
+function App() {
+    //Set card information from an API request
     const [homeInfo, SetHomeInfo] = useState([]);
-    const [listSlug, setListSlug] = useState('');
-    const [lists, setLists] = useState([]);
-    
-    useEffect( () => {
 
+    //Set page loading 
+    const [isLoading, setIsLoading] = useState(true)
+
+    //Get a homepage card information
+    useEffect( () => {
+        setIsLoading(true);
         const loadInfo = async () => {
-            let cards = await Request.getHomeCards();
-            setTimeout(function(){ 
-                SetHomeInfo(cards); 
-            }, 3000);
+            let cards = await Requests.getPageInfo();
+            SetHomeInfo(cards); 
+            setIsLoading(false);
         }
         loadInfo();
-
     }, [])
-
-    useEffect( () =>{
-        let loadLists = async () => {
-            let lists = await Request.getList(listSlug);
-            setLists(lists)
-        }
-        loadLists();
-    },[listSlug])
     
     return (
-        <div className="App">
-            <Header setListSlug={setListSlug}/>
-
+        <div>
+            <Header/>
             <main>
                 <Switch>
                     <Route exact path='/'> 
                         <Home cardInfo={homeInfo}/> 
                     </Route>
+
                     <Route exact path={'/:id'}>
-                        <Lists lists={lists} setLists={setListSlug} /> 
+                        <CardsPage /> 
                     </Route>
+
                 </Switch>
-
             </main>
-            
-            <footer>
 
+            <footer>
+                <div>
+                    Created by Gustavo Davi Alberico
+                </div>
+                <a href="https://rickandmortyapi.com/" rel="noreferrer" target='_blank'>API Link</a>
             </footer>
 
             {
-                homeInfo <= 0 &&
-                <div className='loading'>
-                    <img src="http://pa1.narvii.com/6739/bdb4b304666e2b1cd7b2b43ead7861039417685b_00.gif" alt="" />
-                </div>
+            isLoading &&
+            <div className='loading'>
+                <img src="http://pa1.narvii.com/6739/bdb4b304666e2b1cd7b2b43ead7861039417685b_00.gif" alt="" />
+            </div>
             }
-
         </div>
     );
 };
+
+export default App;

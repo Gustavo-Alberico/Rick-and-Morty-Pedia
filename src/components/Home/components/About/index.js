@@ -4,14 +4,14 @@ import './style.css';
 export default function About(){
     return (
         <div className='aboutContainer'>
-            <img src="/image/rick-and-morty.png" alt="" />
+            <img src="/images/rick-and-morty.png" alt="" />
             <div className='aboutTextContainer'>
-                <h1>lorem</h1>
-                <p className='aboutText'>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Dolorem id ipsam perferendis unde eius quod iste ad voluptatibus 
-                    quidem quos maxime nulla neque, porro natus sapiente! Quia est quae accusamus.
-                </p>
+                <div className='aboutText'>
+                    <h1>About</h1>
+                    <p >
+                        This project shows a simple example of API consumption.
+                    </p>
+                </div>
             </div>
         </div>
     );
