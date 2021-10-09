@@ -1,14 +1,18 @@
+$ColorPrimary: #ffffff;
+$ColorSecondary: #f1f1f1;
+$colorInput: #c4c4c4;
+
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
-}
-.pagination div {
-    cursor: pointer;
-}
-.pagination .page {
-    cursor: default;
+    div {
+        cursor: pointer;
+    }
+    .page {
+        cursor: default;
+    }
 }
 .currentPage {
     display: flex;
@@ -19,11 +23,11 @@
     align-items: center;
     width: 30px;
     height: 30px;
-    border: 1px solid #f1f1f1;
+    border: 1px solid $ColorSecondary;
     border-radius: 8px;
     padding: 3px;
     margin-left: 5px;
-    color: #ffffff;
+    color: $ColorPrimary;
 }
 .page {
     display: flex;
@@ -31,19 +35,19 @@
     align-items: center;
     width: 60px;
     height: 30px;
-    border: 1px solid #f1f1f1;
+    border: 1px solid $ColorSecondary;
     border-radius: 8px;
     padding: 3px;
     margin-left: 5px;
-    color: #ffffff;
+    color: $ColorPrimary;
+    input {
+        width: 16px;
+        padding: 4px;
+        margin-right: 4px;
+        background-color: $colorInput;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+    }
     
-}
-.page input {
-    width: 16px;
-    padding: 4px;
-    margin-right: 4px;
-    background-color: #c4c4c4;
-    outline: none;
-    border: none;
-    border-radius: 4px;
 }

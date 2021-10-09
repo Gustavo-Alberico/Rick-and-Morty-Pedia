@@ -1,32 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
-import './style.css'
+import './style.scss'
 
-function Pagination ({currentPage, setCurrentPage, pageNumber}) {
-
-    const maxPage = pageNumber;
-    const [changePageNumber, setChangePageNumber] = useState(currentPage)
+function Pagination ({currentPage, setCurrentPage, maxPageNumber}) {
 
     useEffect(() => {
-        let newPageNumber = parseInt(changePageNumber)
 
-        if(newPageNumber <= 0 || newPageNumber > maxPage ) {
-            setChangePageNumber(1)
+        if(currentPage <= 0 || currentPage > maxPageNumber ) {
             setCurrentPage(1)
         }
-        else if(isNaN(newPageNumber)) {
-            setChangePageNumber('')
+        else if(isNaN(currentPage)) {
             setCurrentPage('')
         }
         else {
-            setCurrentPage(newPageNumber)
+            setCurrentPage(currentPage)
         }
 
-    },[changePageNumber, setChangePageNumber, maxPage, setCurrentPage])
-
+    },[currentPage, setCurrentPage, maxPageNumber])
 
     const firstPage = ()  => {
         setCurrentPage(1);
@@ -42,15 +35,15 @@ function Pagination ({currentPage, setCurrentPage, pageNumber}) {
     }
 
     const next = () => {
-        if(currentPage >= maxPage){
-            setCurrentPage(maxPage)
+        if(currentPage >= maxPageNumber){
+            setCurrentPage(maxPageNumber)
         } 
         else {
             setCurrentPage(currentPage + 1)
         } 
     }
     const lastPage= () => {
-        setCurrentPage(pageNumber);
+        setCurrentPage(maxPageNumber);
     }
 
     return (
@@ -63,13 +56,11 @@ function Pagination ({currentPage, setCurrentPage, pageNumber}) {
                 <KeyboardArrowLeftIcon />
             </div>
 
-
             <div className='page'>
-                <input type="text" value={currentPage} onChange={(val)=>{setChangePageNumber(val.target.value)}}/> 
+                <input type="text" value={currentPage} onChange={(val)=>{setCurrentPage(val.target.value)}}/> 
                 /                 
-                {maxPage}
+                {maxPageNumber}
             </div>
-
 
             <div className='button'>
                 <KeyboardArrowRightIcon onClick={() => next()}/>

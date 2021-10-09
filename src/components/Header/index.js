@@ -1,20 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect , useState} from 'react';
 import {Link} from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import './style.css'
+import './style.scss'
 
 function Header() {
 
     const [isActive, setIsActive] = useState(false);
-    let mobileMenu = '';
-    if(isActive) {
-        mobileMenu = 'active';
-    }
+    const [mobileMenu, setMobileMenu] = useState('');
+    
+    useEffect(() =>{
+        if(isActive !== false){
+            setMobileMenu('active');
+        } else {
+            setMobileMenu('');
+        }
+    }, [isActive])
 
     const selectPage = () => {
         setIsActive(false);
-
     }
 
     return(
@@ -32,10 +36,26 @@ function Header() {
                     }
                 </div>
                 <ul className='menu'>
-                    <li><Link onClick={selectPage} to='/' >Home</Link></li>
-                    <li><Link onClick={selectPage} to='/character' >Characters</Link></li>
-                    <li><Link onClick={selectPage} to='/location' >Locations</Link></li>
-                    <li><Link onClick={selectPage} to='/episode' >Episodes</Link></li>
+                    <li>
+                        <Link onClick={selectPage} to='/'>
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link onClick={selectPage} to='/character'>
+                            Characters
+                        </Link>
+                    </li>
+                    <li>
+                        <Link onClick={selectPage} to='/location'>
+                            Locations
+                        </Link>
+                    </li>
+                    <li>
+                        <Link onClick={selectPage} to='/episode'>
+                            Episodes
+                        </Link>
+                    </li>
                 </ul>
             </nav>
 
