@@ -1,0 +1,36 @@
+$colorPrimary: #c0e620;
+$colorBackground: #399fda;
+
+@font-face {
+    font-family: rick-font;
+    src: url('../../../../fonts/shlop/shlop-rg.ttf');
+}
+.HeroPageContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.HeroPageText {
+    position: absolute;
+    h1 {
+        font-family: rick-font;
+        color: $colorBackground;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $colorPrimary;
+        margin: 0;
+        font-size: 62px;
+    }
+}
+@media (max-width: 576px) { 
+    .HeroPageText h1 {
+        font-size: 32px;
+    }
+}
