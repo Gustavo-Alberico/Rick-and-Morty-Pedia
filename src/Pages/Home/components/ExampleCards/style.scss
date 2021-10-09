@@ -1,16 +1,19 @@
-.examplesCardContainer {
+$ColorPrimary: #f1f1f1;
+$ColorSecondary: #111111;
+
+.examplesCardsContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #111111;
+    background-color: $ColorSecondary;
     width: 90%;
     margin: 10px 0px;
     padding-bottom: 50px;
     border-radius: 32px;
 }
-.cardTextExamples {
-    color: #f1f1f1;
+.cardsTextExamples {
+    color: $ColorPrimary;
     font-weight: bold;
     font-size: 32px;
     margin-top: 15px;
@@ -25,14 +28,12 @@
 }
 .randomCards  {
     margin: 20px;
+    h2 {
+        color: $ColorPrimary;
+    }
 }
-.randomCards  h2 {
-    color: #f1f1f1;
-}
-
-
 @media (max-width: 576px) { 
-    .examplesCardContainer {
+    .examplesCardsContainer {
         width: 100%;
         border-radius: 0;
         margin-top: 20px;

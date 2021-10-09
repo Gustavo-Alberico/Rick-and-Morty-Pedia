@@ -1,16 +1,21 @@
+$colorPrimary: #191919;
+$colorFooter: #505050;
+$colorFooterBackground: #c4c4c4;
+$colorLink: #3f7fd3; 
+
 .loading {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #191919;
+    background-color: $colorPrimary;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-footer {
-    background-color: #c4c4c4;
+.footer {
+    background-color:$colorFooterBackground;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,9 +23,11 @@ footer {
     height: 50px;
     margin-top: 20px;
     padding: 15px;
-    color: #505050;
-}
-footer a {
-    color: #505050;
-    text-decoration: none;
+    color: $colorFooter;
+    a {
+        color: $colorLink;
+    }
+    a:visited {
+        color: $colorLink;
+    }
 }

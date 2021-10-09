@@ -1,3 +1,8 @@
+$colorPrimary: #161616;
+$colorSecondary: #666666;
+$headerBackground: #111111;
+$ColorButton: #ffffff;
+
 .header{
     position: absolute;
     top: 0;
@@ -7,16 +12,16 @@
     display: flex;
     align-items: center;
     justify-content:space-between ;
-    background-color: #111111;
+    background-color: $headerBackground;
     z-index: 1;
     box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.9);
 }
 .logo {
     width: 170px;
     margin-left: 50px;
-}
-.logo img {
-    width: 100%;
+    img {
+        width: 100%;
+    }
 }
 .menu {
     padding: 0;
@@ -25,22 +30,21 @@
     list-style: none;
     gap: 0.5rem;
     margin-right: 15px;
-}
-.menu a {
-    display: block;
-    color: #666666;
-    text-decoration: none;
-    font-weight: 900;
-    padding: 0.5rem;
-}
-.menu a:hover {
-    background-color: #666666;
-    color: #161616;
+    a {
+        display: block;
+        color: $colorSecondary;
+        text-decoration: none;
+        font-weight: 900;
+        padding: 0.5rem;
+    }
+    a:hover {
+        background-color: $colorSecondary;
+        color: $colorPrimary;
+    }
 }
 .buttonMobile {
     display: none;
 }
-
 @media (max-width: 768px){
     .header {
         height: 70px;
@@ -49,7 +53,7 @@
     }
     .buttonMobile {
         display: block;
-        color: #ffffff;
+        color: $ColorButton;
         margin: 10px;
     }
     .logo img {
@@ -60,7 +64,7 @@
         display: block;
         margin: 0;
         visibility: hidden;
-        background-color: #161616;
+        background-color: $colorPrimary;
         width: 100%;
         height: 0px;
         top: 70px;
@@ -68,15 +72,15 @@
         z-index: 1000;
         transition: 0.5s;
         overflow-y: hidden;
+        a {
+            padding: 1.5rem 0;
+            margin: 0 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+        }
     }
     nav.active .menu {
         height: calc(100vh - 40px);
         visibility: visible;
         overflow-y: auto;
     } 
-    .menu a {
-        padding: 1.5rem 0;
-        margin: 0 1rem;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.05);
-    }
 }

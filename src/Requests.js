@@ -10,7 +10,7 @@ const basicFetch = async (endpoint) => {
 
 const Requests = {
 
-    getPageInfo: async () => {
+    getHomeCards: async () => {
         return [
             {
                 slug: 'character',

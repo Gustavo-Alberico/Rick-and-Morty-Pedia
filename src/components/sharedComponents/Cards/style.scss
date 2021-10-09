@@ -1,5 +1,8 @@
+$colorPrimary: #464646;
+$colorSecondary: #d4d4d4;
+
 .card {
-    background-color: #464646;
+    background-color: $colorPrimary;
     width: 390px;
     height: 180px;
     display: flex;
@@ -12,12 +15,12 @@
 .cardImg {
     width: 180px;
     height: 180px;
-}
-.cardImg img {
-    border-radius: 8px 0px 0px 8px;
-    object-fit: cover;
-    width: 180px;
-    height: 100%;
+    img {
+        border-radius: 8px 0px 0px 8px;
+        object-fit: cover;
+        width: 180px;
+        height: 100%;
+    }
 }
 .cardText {
     display: flex;
@@ -25,13 +28,12 @@
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    color: #d4d4d4;
+    color: $colorSecondary;
+    div {
+        padding-left: 10px;
+        margin: 5px;
+    }
 }
-.cardText div {
-    padding-left: 10px;
-    margin: 5px;
-}
-
 @media (max-width: 800px) { 
     .card {
         width: 305px;
@@ -39,10 +41,10 @@
     .cardImg {
         width: 160px;
         height: 100%;
-    }
-    .cardImg img {
-        width: 160px;
-        height: 100%;
+        img {
+            width: 160px;
+            height: 100%;
+        }
     }
     .cardText div {
         font-size: 13px;
