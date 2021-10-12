@@ -1,7 +1,7 @@
 $colorPrimary: #191919;
 $colorFooter: #505050;
 $colorFooterBackground: #c4c4c4;
-$colorLink: #3f7fd3; 
+$colorLink: #3f7fd3;
 
 .loading {
     position: fixed;
@@ -15,7 +15,7 @@ $colorLink: #3f7fd3;
     justify-content: center;
 }
 .footer {
-    background-color:$colorFooterBackground;
+    background-color: $colorFooterBackground;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -24,7 +24,7 @@ $colorSecondary: #d4d4d4;
 }
 .cardText {
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
@@ -34,7 +34,7 @@ $colorSecondary: #d4d4d4;
         margin: 5px;
     }
 }
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
     .card {
         width: 305px;
     }

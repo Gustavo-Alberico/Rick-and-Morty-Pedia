@@ -21,18 +21,18 @@ $ColorSecondary: #111111;
 }
 .exampleCards {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: row;
 }
-.randomCards  {
+.randomCards {
     margin: 20px;
     h2 {
         color: $ColorPrimary;
     }
 }
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
     .examplesCardsContainer {
         width: 100%;
         border-radius: 0;
