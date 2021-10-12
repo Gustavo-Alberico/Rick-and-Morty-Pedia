@@ -3,7 +3,7 @@ $colorSecondary: #666666;
 $headerBackground: #111111;
 $ColorButton: #ffffff;
 
-.header{
+.header {
     position: absolute;
     top: 0;
     box-sizing: border-box;
@@ -11,7 +11,7 @@ $ColorButton: #ffffff;
     height: 110px;
     display: flex;
     align-items: center;
-    justify-content:space-between ;
+    justify-content: space-between;
     background-color: $headerBackground;
     z-index: 1;
     box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.9);
@@ -45,7 +45,7 @@ $ColorButton: #ffffff;
 .buttonMobile {
     display: none;
 }
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .header {
         height: 70px;
         position: fixed;
@@ -82,5 +82,5 @@ $ColorButton: #ffffff;
         height: calc(100vh - 40px);
         visibility: visible;
         overflow-y: auto;
-    } 
+    }
 }

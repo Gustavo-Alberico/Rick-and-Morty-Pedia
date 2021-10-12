@@ -47,14 +47,13 @@ $colorBorder: #6d6d6d;
         }
     }
 }
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
     .aboutContainer {
         margin-top: 10px;
-
     }
 }
-@media (max-width: 768px) { 
-    .aboutText{
+@media (max-width: 768px) {
+    .aboutText {
         width: 100%;
         border-radius: 0px;
     }

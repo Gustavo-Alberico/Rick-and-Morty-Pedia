@@ -3,7 +3,7 @@ $colorBackground: #399fda;
 
 @font-face {
     font-family: rick-font;
-    src: url('../../../../fonts/shlop/shlop-rg.ttf');
+    src: url("../../../../fonts/shlop/shlop-rg.ttf");
 }
 .HeroPageContainer {
     display: flex;
@@ -29,7 +29,7 @@ $colorBackground: #399fda;
         font-size: 62px;
     }
 }
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
     .HeroPageText h1 {
         font-size: 32px;
     }
